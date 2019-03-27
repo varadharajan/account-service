@@ -1,0 +1,16 @@
+language: scala
+
+scala:
+  - 2.12.8
+
+services:
+  - docker
+
+script:
+  - docker build -t varadharajan/account-service:$TRAVIS_BUILD_NUMBER -t varadharajan/account-service:latest .
+
+deploy:
+  provider: script
+  script: bash build_scripts/docker_push.sh
+  on:
+    branch: master
