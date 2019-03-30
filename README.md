@@ -22,7 +22,7 @@ EOF
 $ docker run -v $(pwd)/application.conf:/apps/account-service/application.conf -p 8080:8080 -ti varadharajan/account-service:latest
 ```
 
-You should be able to access the API at http://localhost:8080 (For example: http://localhost:8080/v1/images). Pressing RETURN key would stop the container.
+You should be able to access the API at http://localhost:8080 (For example: http://localhost:8080/v1/accounts). Pressing RETURN key would stop the container.
 
 Here are some API calls:
 
