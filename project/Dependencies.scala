@@ -11,6 +11,8 @@ object Dependencies {
     "com.typesafe.akka" %% "akka-http-testkit" % "10.1.7" % Test
   )
 
+  lazy val nscalaTime = "com.github.nscala-time" %% "nscala-time" % "2.22.0"
+
   lazy val scalaSTM = Seq("org.scala-stm" %% "scala-stm" % "0.8")
 
   lazy val logging = Seq(

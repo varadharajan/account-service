@@ -27,7 +27,9 @@ object Main {
   import AccountServiceRuntime._
 
   def main(args: Array[String]): Unit = {
-    val router = DebuggingDirectives.logRequest("APIRequest", Logging.InfoLevel)(AccountServiceRouter().routes)
+    val accountRepository = STMAccountRepository()
+    val accountService    = AccountServiceImpl(accountRepository)
+    val router            = DebuggingDirectives.logRequest("APIRequest", Logging.InfoLevel)(AccountServiceRouter(accountService).routes)
 
     val bindingFuture = Http().bindAndHandle(router, interface = AccountServiceConfig.socket._1, port = AccountServiceConfig.socket._2)
 

@@ -10,6 +10,7 @@ lazy val root = (project in file("."))
     name := "account-service",
     libraryDependencies ++= akka
       ++ scalaSTM
+      ++ Seq(nscalaTime)
       ++ logging
       ++ Seq(scalaTest, scalaMock)
   )
